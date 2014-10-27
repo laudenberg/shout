@@ -438,6 +438,15 @@ $(function() {
 		}
 	}
 
+	$(window).on("blur", blur);
+
+	function blur() {
+		$("#windows .active .last-msg").removeClass("last-msg");
+		$("#windows .active")
+			.find(".msg:last")
+			.addClass("last-msg");
+	}
+
 	var top = 1;
 	sidebar.on("click", ".chan, button", function() {
 		var self = $(this);
@@ -467,7 +476,11 @@ $(function() {
 		}
 
 		viewport.removeClass("lt");
-		$("#windows .active").removeClass("active");
+		$("#windows .active .last-msg").removeClass("last-msg");
+		$("#windows .active")
+			.removeClass("active")
+			.find(".msg:last")
+			.addClass("last-msg");
 
 		var chan = $(target)
 			.addClass("active")

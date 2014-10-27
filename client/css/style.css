@@ -511,6 +511,7 @@ button {
 }
 #chat .messages {
 	display: table;
+	border-collapse: collapse;
 	height: 100%;
 	width: 100%;
 }
@@ -518,11 +519,15 @@ button {
 	display: table-row;
 	word-wrap: break-word;
 }
+#chat .msg.last-msg {
+	border-bottom: 1px solid #999;
+}
 #chat .msg:first-child > span {
 	padding-top: 10px;
 }
 #chat .msg:last-child {
 	height: 100%;
+	border: none;
 }
 #chat .msg:last-child .text {
 	padding-bottom: 10px;
